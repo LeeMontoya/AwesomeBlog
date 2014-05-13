@@ -1,0 +1,167 @@
+﻿/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+h1
+{
+    line-height: 2.0em;
+    color: black;
+    font-family: 'Times New Roman';
+    font-size: 35px;
+    
+}
+body
+{
+    background-image: url(http://legadooilfield.com/images/background.png); 
+    background-attachment:fixed;
+    opacity: 1;
+    line-height: 2.0em;
+    text-align: center;
+    background-color: rgba(90, 73, 73, 0.58);
+  
+    
+    
+}
+author
+{
+    line-height: 2.0em;
+    text-align: center;
+    font-family: 'Times New Roman';
+}
+h2
+{
+    line-height: 2.0em;
+    font-family: 'Times New Roman';
+    font-size: 70px;
+    text-decoration:overline;
+    color: #232323;
+}
+.post
+{
+
+    background-color: #d4d0c6;
+    -webkit-box-shadow: 0 0 10px #777777;
+    box-shadow: 0 0 10px #777777;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 10;
+    border: double black;
+    font-family: 'Times New Roman';
+    border-width: thick;
+ 
+}
+a:link, a:visited
+{
+    font-family: 'AR CENA';
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgba(254, 15, 15, 0.78);
+    text-decoration: none;
+    
+}
+.comments
+{
+    font-family: 'Cordia New';
+    font-size: 20px;
+    
+}
+.Individual
+{
+    border: solid;
+    border-style: ridge;
+    border-color: rgba(133, 111, 111, 0.72);
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 10px;
+    border-width: 4px;
+    
+  
+}
+.lineone
+{
+    font-weight: bold;
+    text-decoration: underline;
+}
+.commentbody
+{    
+    font-style: italic;
+}
+.linetwo
+{
+    text-decoration: underline;
+}
+.doge
+{
+    display: block;
+    
+}
+.doge img
+{
+    border-radius: 50%;
+    height: 200px;
+    border: solid;
+
+}

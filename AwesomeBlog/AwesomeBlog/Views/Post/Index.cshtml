@@ -1,0 +1,59 @@
+﻿@model IEnumerable<AwesomeBlog.Models.Post>
+
+@{
+    ViewBag.Title = "New Post";
+    Layout = "/Views/Shared/_layoutDashboard.cshtml";
+}
+
+<h2>Blog Posts</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Date Posted
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            Author
+        </th>
+        <th>
+            Body
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.postDate
+        </td>
+        <td>
+            @item.title
+        </td>
+        <td>
+            @item.author
+        </td>
+        <td>
+            @if (item.body.Length > 200)
+            {
+                <small>@item.body.Substring(0, 200)</small>
+            }
+            else
+            {
+                <small>@item.body</small>
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.blogID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.blogID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.blogID })
+        </td>
+    </tr>
+}
+
+</table>

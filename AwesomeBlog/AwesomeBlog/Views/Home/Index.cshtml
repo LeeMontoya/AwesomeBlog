@@ -1,0 +1,78 @@
+﻿@model IEnumerable<AwesomeBlog.Models.Post>
+
+@{
+    ViewBag.Title = "Wow Blog";
+    
+}
+
+<h2>Much Blog</h2>
+
+<div class="doge">
+    <img src="https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg">
+    
+</div>
+@foreach(var post in Model)
+{
+    <section>
+        <h1>@post.title</h1>
+         <small>
+             @post.postDate.ToLongDateString() <br />
+            
+         </small>
+        @if (!string.IsNullOrEmpty(post.thumbnail))
+        {
+            <img class =" "src="@post.thumbnail" height="200" /> <br />
+            
+        }
+        By @post.author
+         <div class="post">
+
+             @post.body
+         </div>
+            <div>
+                <small>@post.favorite </small>
+                
+                @if (post.favorite == 1)
+                {
+                   <a href="@Url.Action("Like", "Home", new {id = post.blogID})">
+                    LIKE
+                </a>
+                }
+                else
+                {
+                    <a href="@Url.Action("Like", "Home", new {id = post.blogID})">
+                    LIKES
+                </a>
+                }
+            </div>
+        <div class = "comments">
+
+            @foreach (var comment in post.Comments)
+            {
+                <div class = "Individual">
+                    <span class="lineone">@comment.author</span> 
+                    
+                    <br />
+                    <span class="commentbody">@comment.body</span>
+                    <br />
+                    <span class="linetwo">Posted on: @comment.postedOn</span>
+                    
+
+                </div>
+                <br />
+            }
+
+            @using (Html.BeginForm("AddComment", "Home", new { id = post.blogID }))
+            {
+                <label for = "author"> Author </label>
+                <input type = "text" name = "author" />
+                <br />
+                <label for="body">Comment</label>
+                <textarea name="body"></textarea>
+                <br />
+                <input type="submit" value="Add Comment" />
+            }
+        </div>
+        
+    </section>
+}

@@ -1,0 +1,83 @@
+﻿@model AwesomeBlog.Models.Post
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "/Views/Shared/_layoutDashboard.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Post</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.blogID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.blogID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.body)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.body)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.favorite)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.favorite)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.postDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.postDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.author)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.author)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tags)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tags)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.thumbnail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.thumbnail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.viewCount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.viewCount)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

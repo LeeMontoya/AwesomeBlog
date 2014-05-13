@@ -1,0 +1,101 @@
+﻿@model AwesomeBlog.Models.Post
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "/Views/Shared/_layoutDashboard.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Post</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.blogID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.blogID)
+            @Html.ValidationMessageFor(model => model.blogID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.body)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.body, 10, 50, new { })
+            @Html.ValidationMessageFor(model => model.body)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.title)
+            @Html.ValidationMessageFor(model => model.title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.favorite)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.favorite)
+            @Html.ValidationMessageFor(model => model.favorite)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.postDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.postDate)
+            @Html.ValidationMessageFor(model => model.postDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.author)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.author)
+            @Html.ValidationMessageFor(model => model.author)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.tags)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tags)
+            @Html.ValidationMessageFor(model => model.tags)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.thumbnail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.thumbnail)
+            @Html.ValidationMessageFor(model => model.thumbnail)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.viewCount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.viewCount)
+            @Html.ValidationMessageFor(model => model.viewCount)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
