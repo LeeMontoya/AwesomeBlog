@@ -28,7 +28,7 @@ namespace AwesomeBlog.Controllers
             //save changes to the database
             db.SaveChanges();
 
-            return RedirectToAction("Index");
+            return Content(post.favorite + " Likes");
         }
 
         
@@ -46,7 +46,9 @@ namespace AwesomeBlog.Controllers
             //add our comment to the database
             db.Comments.Add(comment);
             db.SaveChanges();
-            return RedirectToAction("Index");
+
+            //get the post
+            return PartialView("Comment", comment);
         }
     }
 }

@@ -1,0 +1,13 @@
+﻿@model AwesomeBlog.Models.Comment
+
+<div class="Individual">
+    <span class="lineone">@Model.author</span>
+
+    <br />
+    <span class="commentbody">@Model.body</span>
+    <br />
+    <span class="linetwo">
+        Posted on: @Model.postedOn.ToLongDateString()
+                @@ @Model.postedOn.ToShortDateString()
+    </span>
+</div> 

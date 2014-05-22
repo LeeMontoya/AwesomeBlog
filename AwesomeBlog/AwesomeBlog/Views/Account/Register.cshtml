@@ -1,0 +1,65 @@
+﻿@model AwesomeBlog.Models.Register
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Much Register</h2>
+
+<div class="dogeLogin">
+    <img src="http://i.imgur.com/6AfL7Sd.jpg">
+</div>
+
+@ViewBag.ErrorMessage
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Register</legend>
+
+        <div class="editor-label">
+            So Username<br />
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Username)<br/>
+            @Html.ValidationMessageFor(model => model.Username)
+        </div>
+
+        <div class="editor-label">
+            Very Email<br />
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)<br/>
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            Much Password<br />
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)<br/>
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="editor-label">
+            So Confirm Password<br />
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ConfirmPassword)<br/>
+            @Html.ValidationMessageFor(model => model.ConfirmPassword)
+        </div>
+
+        <p>
+            <input type="submit" value="Register" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

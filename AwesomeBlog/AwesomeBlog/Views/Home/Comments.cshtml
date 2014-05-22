@@ -1,0 +1,26 @@
+﻿@model AwesomeBlog.Models.Post
+        
+    
+<span class="showComments">
+    Show @Model.Comments.Count() Comments
+</span>
+
+<div class="commentsDiv">
+    @foreach (var comment in Model.Comments)
+    {
+        @Html.Partial("Comment", comment)
+  
+    }
+
+    @using (Html.BeginForm("AddComment", "Home", FormMethod.Post, new { @class = "commentForm", data_id = Model.blogID }))
+    {
+        <label for="author"> Author </label>
+        <input type="text" name="author" class="commentContent" />
+        <br />
+        <label for="body">Comment</label>
+        <textarea name="body" class="commentContent"></textarea>
+        <br />
+        <input type="submit" value="Add Comment" />
+    }
+
+</div>
